@@ -54,6 +54,7 @@ const SidebarContainer = styled.header`
   height: 100%;
   min-height: 70vh;
   justify-content: space-between;
+  padding: 0 1rem;
   @media (max-width: 425px) {
     height: 100%;
     width: 100%;
@@ -88,6 +89,10 @@ const Contact = styled.div`
     &:hover {
       color: cyan;
     }
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+    
   }
 `
 

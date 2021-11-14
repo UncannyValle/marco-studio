@@ -23,22 +23,19 @@ const Gallery = ({ className }) => {
   const thumbs = data.allFile.edges
 
   return (
-    <SRLWrapper>
-      {" "}
-      <GalleryWrapper>
-        {thumbs.map(thumb => {
-          const img = getImage(thumb.node)
-          const name = thumb.node.name
-          const key = thumb.node.id
+    <GalleryWrapper className={className}>
+      {thumbs.map(thumb => {
+        const img = getImage(thumb.node)
+        const name = thumb.node.name
+        const key = thumb.node.id
 
-          return (
-            <>
-              <Image image={img} alt={name} key={key} id={key} />
-            </>
-          )
-        })}
-      </GalleryWrapper>
-    </SRLWrapper>
+        return (
+          <>
+            <Image image={img} alt={name} key={key} id={key} />
+          </>
+        )
+      })}
+    </GalleryWrapper>
   )
 }
 
