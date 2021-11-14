@@ -1,4 +1,5 @@
 import * as React from "react"
+import Gallery from "../components/gallery"
 // import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -9,6 +10,7 @@ const IndexPage = () => (
   <Layout>
     <Seo />
     <Sidebar />
+    <Gallery />
   </Layout>
 )
 

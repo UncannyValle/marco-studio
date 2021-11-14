@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 //Global Styles
 const GlobalStyle = createGlobalStyle`
@@ -70,17 +71,39 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Heebo', sans-serif;
   }
   h1 {
-    font-size: 2.7rem;
+    font-size: 3.5rem;
     line-height: 1.25;
     letter-spacing: -0.175rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.75rem;
+    line-height: 1.75;
+  }
+  p  {
+    font-weight: 300;
+    line-height: 1.875;
+
   }
   main {
-    max-width: 1080px;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1rem;
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 425px) {
+    main {
+      flex-wrap: wrap;
+    }
   }
 `
 
@@ -97,19 +120,21 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
-      <main siteTitle={data.site.siteMetadata?.title || `Title`}>
-        {children}
-      </main>
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <SimpleReactLightbox>
+        <GlobalStyle />
+        <main siteTitle={data.site.siteMetadata?.title || `Title`}>
+          {children}
+        </main>
+        <footer
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
+      </SimpleReactLightbox>
     </>
   )
 }

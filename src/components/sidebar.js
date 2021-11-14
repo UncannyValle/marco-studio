@@ -32,11 +32,7 @@ const Sidebar = () => (
       >
         <Instagram size="30" />
       </a>
-      <a
-        href="https://instagram.com/marcoalpeart"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="mailto: lbalvarez8@gmail.com">
         <Mail size="30" />
       </a>
     </Contact>
@@ -54,24 +50,31 @@ Sidebar.defaultProps = {
 const SidebarContainer = styled.header`
   display: flex;
   flex-flow: column nowrap;
-  width: 30%;
-  padding: 1rem;
-  min-height: 80vh;
+  min-width: 30%;
+  height: 100%;
+  min-height: 70vh;
   justify-content: space-between;
+  @media (max-width: 425px) {
+    height: 100%;
+    width: 100%;
+  }
 `
 const Title = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  @media (max-width: 425px) {
+    text-align: center;
+    justify-content: center;
+  }
 `
 const SubTitle = styled.h2`
-  line-height: 1.75;
   font-weight: 300;
+  text-align: center;
 `
 const Body = styled.div`
   letter-spacing: -0.025rem;
-  line-height: 1.875;
   min-height: 50%;
-  font-weight: lighter;
+  font-weight: 300;
   p {
     padding: 1rem 0;
   }
