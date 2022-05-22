@@ -70,7 +70,10 @@ const Title = styled.div`
 `
 const SubTitle = styled.h2`
   font-weight: 300;
-  text-align: center;
+  text-align: left;
+  @media (max-width: 512px) {
+    text-align: center;
+  }
 `
 const Body = styled.div`
   letter-spacing: -0.025rem;
@@ -92,7 +95,6 @@ const Contact = styled.div`
   }
   @media (max-width: 425px) {
     width: 100%;
-    
   }
 `
 

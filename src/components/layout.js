@@ -127,12 +127,12 @@ const Layout = ({ children }) => {
         </main>
         <footer
           style={{
-            marginTop: `2rem`,
+            textAlign: "center"
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://julianvalle.dev">Julian Valle</a>
         </footer>
       </SimpleReactLightbox>
     </>
